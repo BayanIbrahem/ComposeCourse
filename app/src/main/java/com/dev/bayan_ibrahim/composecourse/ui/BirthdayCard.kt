@@ -13,7 +13,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.modifier.modifierLocalOf
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -83,7 +82,7 @@ fun HappyBirthdayCardWithImage(name: String, sender: String) {
 @Preview (showBackground = true)
 @Composable
 fun BirthdayCardPreview () {
-    ComposeCourseTheme() {
+    ComposeCourseTheme {
         HappyBirthdayCardWithImage(name = "Sam" , sender = "Sami")
     }
 }
