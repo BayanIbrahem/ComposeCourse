@@ -1,3 +1,15 @@
 <resources>
 	<string name="app_name">ComposeCourse</string>
+
+	<string name="lemonTreeDescription">Tab the lemon tree to select a lemon</string>
+	<string name="lemonTreeHint">lemon tree</string>
+
+	<string name="lemonSqueezeDescription">Keep tapping the lemon to squeeze it</string>
+	<string name="lemonSqueezeHint">lemon squeeze</string>
+
+	<string name="lemonDrinkDescription">Tab the lemonade to drink it</string>
+	<string name="lemonDrinkHint">lemon drink</string>
+
+	<string name="lemonRestartDescription">Tab the empty glass to start again</string>
+	<string name="lemonRestartHint">lemon restart</string>
 </resources>

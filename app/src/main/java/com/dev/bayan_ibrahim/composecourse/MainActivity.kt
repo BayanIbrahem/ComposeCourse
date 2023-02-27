@@ -10,6 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.dev.bayan_ibrahim.composecourse.ui.LemonLifecycleApp
+import com.dev.bayan_ibrahim.composecourse.ui.LemonLifecyclePreview
 import com.dev.bayan_ibrahim.composecourse.ui.theme.ComposeCourseTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    LemonLifecycleApp()
                 }
             }
         }
@@ -38,6 +40,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     ComposeCourseTheme {
-        Greeting("Android")
+        LemonLifecycleApp()
     }
 }

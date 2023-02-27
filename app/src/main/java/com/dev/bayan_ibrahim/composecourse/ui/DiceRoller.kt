@@ -33,11 +33,11 @@ class DiceRoller: ComponentActivity() {
 
 @Composable
 fun DiceRollerScreen() {
-    DicerollerButtonAndImage(Modifier.fillMaxSize())
+    DiceRollerButtonAndImage(Modifier.fillMaxSize())
 }
 
 @Composable
-fun DicerollerButtonAndImage(modifier: Modifier = Modifier) {
+fun DiceRollerButtonAndImage(modifier: Modifier = Modifier) {
     var diceRollResult by remember {
         mutableStateOf (value = 1)
     }
