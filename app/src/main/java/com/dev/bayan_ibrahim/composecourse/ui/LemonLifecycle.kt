@@ -5,6 +5,7 @@ import android.os.PersistableBundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
@@ -66,6 +67,9 @@ private fun getHintValue (step: Int) = when (step) {
 @Composable
 fun LemonLifecycleImageAndText(modifier: Modifier = Modifier) {
     var stepIndex by remember { mutableStateOf (1) }
+    var remainedSqueezing by remember { mutableStateOf (0) }
+//    var maxSqueezingTimes = 2
+//    var currentSqueezingIndex = 0
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.Center,
@@ -78,11 +82,21 @@ fun LemonLifecycleImageAndText(modifier: Modifier = Modifier) {
             text = textValue,
             fontSize = 18.sp,
         )
-        Button(onClick = { stepIndex = stepIndex.mod(4).inc() }) {
-            Image(
-                painter = painterResource(id = resourceValue),
-                contentDescription = getHintValue(step = stepIndex)
-            )
+        Image(
+            painter = painterResource(id = resourceValue),
+            contentDescription = getHintValue(step = stepIndex),
+            modifier = Modifier
+                .clickable {
+                    if (stepIndex == 2 && remainedSqueezing != 1) {
+                        remainedSqueezing--
+                    } else {
+                        stepIndex = stepIndex.mod(4).inc()
+                        remainedSqueezing = (3..5).random()
+                    }
+                }
+        )
+        if (stepIndex == 2) {
+            Text (text = "remained squeezing $remainedSqueezing")
         }
     }
 }
