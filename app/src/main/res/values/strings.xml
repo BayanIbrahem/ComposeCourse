@@ -1,3 +1,7 @@
 <resources>
 	<string name="app_name">ComposeCourse</string>
+	<string name="title">Tib Calculator</string>
+	<string name="totalAmount">"Total Amount: %s"</string>
+	<string name="bill_amount">Bill Amount</string>
+	<string name="tib_cost">Tib Cost</string>
 </resources>

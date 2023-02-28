@@ -4,6 +4,9 @@ plugins {
 }
 
 android {
+//	testOptions {
+//		unitTests.returnDefaultValues = true
+//	}
 	namespace 'com.dev.bayan_ibrahim.composecourse'
 	compileSdk 32
 
