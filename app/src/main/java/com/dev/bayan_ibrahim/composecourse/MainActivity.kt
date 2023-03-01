@@ -22,7 +22,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dev.bayan_ibrahim.composecourse.domain.model.Affirmation
+import com.dev.bayan_ibrahim.composecourse.domain.model.DataSource
 import com.dev.bayan_ibrahim.composecourse.domain.model.loadAffirmations
+import com.dev.bayan_ibrahim.composecourse.ui.CourseGrid
 import com.dev.bayan_ibrahim.composecourse.ui.theme.ComposeCourseTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,7 +37,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-
+                    CourseGrid(courses = DataSource.courses)
                 }
             }
         }
