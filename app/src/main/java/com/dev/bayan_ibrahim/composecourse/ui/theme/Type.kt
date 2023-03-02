@@ -16,19 +16,23 @@ val Montserrat = FontFamily(
     Font(R.font.montserrat_regular),
     Font(R.font.montserrat_bold, weight = FontWeight.Bold)
 )
+val Cabin = FontFamily (
+    Font(R.font.cabin_regular),
+    Font(R.font.cabin_bold, weight = FontWeight.Bold),
+)
 val Typography = Typography(
     body1 = TextStyle(
-        fontFamily = Montserrat,
+        fontFamily = Cabin,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
     ),
     h1 = TextStyle(
-        fontFamily = AprilFatFace,
+        fontFamily = Cabin,
         fontWeight = FontWeight.Normal,
         fontSize = 30.sp,
     ),
     h2 = TextStyle(
-        fontFamily = AprilFatFace,
+        fontFamily = Cabin,
         fontWeight = FontWeight.Bold,
         fontSize = 20.sp,
     ),

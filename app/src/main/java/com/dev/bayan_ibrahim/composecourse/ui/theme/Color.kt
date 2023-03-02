@@ -19,3 +19,14 @@ val White = Color(0xFFFFFFFF)
 val Grey100 = Color(0xFFF1F3F4)
 val Cyan900 = Color(0xFF007B83)
 val Cyan700 = Color(0xFF129EAF)
+
+/** super heroes: */
+// Light Theme
+val RumSwizzle = Color(0xFFFDFCF4)
+val Kidnapper = Color (0xFFE0EACE)
+val Kelp = Color(0xFF3C3D36)
+
+// Dark Theme
+val KelpDark = Color (0xFF434B36)
+val LogCabin = Color (0xFF1B1C18)
+val Celeste = Color (0xFFCFD0C6)

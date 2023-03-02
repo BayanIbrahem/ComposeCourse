@@ -29,7 +29,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dev.bayan_ibrahim.composecourse.data.Dog
+import com.dev.bayan_ibrahim.composecourse.data.MyHeroAcademy
 import com.dev.bayan_ibrahim.composecourse.data.dogs
+import com.dev.bayan_ibrahim.composecourse.domain.model.SuperHero
 import com.dev.bayan_ibrahim.composecourse.ui.theme.ComposeCourseTheme
 import kotlin.math.exp
 
@@ -50,190 +52,134 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun WoofScreen () {
-    WoofList(modifier = Modifier.fillMaxSize())
+fun SuperHeroesScreen () {
+    SuperHeroesList()
+}
+@Composable
+fun SuperHeroesList(modifier: Modifier = Modifier){
+    Scaffold (
+        topBar = {
+            SuperHeroTopBar()
+        }
+    ){
+        LazyColumn(
+            modifier = modifier
+                .background(color = MaterialTheme.colors.background),
+
+            ) {
+            items(MyHeroAcademy.superHeroesList) { hero ->
+                SuperHeroCard(hero = hero)
+            }
+        }
+    }
 }
 
 @Composable
-fun DogIcon (@DrawableRes id: Int) {
-    Image(
+fun SuperHeroTopBar () {
+    Row(
         modifier = Modifier
-            .size(64.dp)
-            .padding(8.dp)
-            .clip(RoundedCornerShape(50.dp)),
-        painter = painterResource(id = id),
+            .height(52.dp)
+            .fillMaxWidth(),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text (
+            text = "Super Heroes",
+            style = MaterialTheme.typography.h1,
+        )
+    }
+}
+@Composable
+fun SuperHeroCard(modifier: Modifier = Modifier, hero: SuperHero) {
+    Card (
+        modifier = modifier
+            .padding(8.dp),
+        elevation = 2.dp,
+    ) {
+        Row (
+            modifier = Modifier
+                .padding(16.dp)
+                .height(72.dp)
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.Top,
+        ) {
+            SuperHeroInfo(modifier = Modifier.weight(1f), name = hero.name, title = hero.title)
+            Spacer(modifier = Modifier.padding(16.dp))
+            SuperHeroImage(imageRes = hero.imageRes)
+        }
+    }
+}
+
+@Composable
+fun SuperHeroImage (modifier: Modifier = Modifier,@DrawableRes imageRes: Int) {
+    Image(
+        modifier = modifier
+            .clip(RoundedCornerShape(8.dp))
+            .size(64.dp),
+        painter = painterResource(id = imageRes),
         contentDescription = null,
         contentScale = ContentScale.Crop,
     )
 }
 
 @Composable
-fun DogInformation(dog: Dog) {
+fun SuperHeroInfo (modifier: Modifier = Modifier, name: String, title: String) {
     Column(
-        verticalArrangement = Arrangement.Center,
+        modifier = modifier,
     ) {
         Text(
-            text = stringResource(id = dog.name),
-            fontWeight = FontWeight.Bold,
+            text = name,
             style = MaterialTheme.typography.h2,
         )
         Text(
-            text = stringResource(id = R.string.years_old, dog.age),
+            text = title,
             style = MaterialTheme.typography.body1,
         )
     }
 }
 
-@Composable
-fun DogHobby (modifier: Modifier = Modifier, @StringRes hobby: Int) {
-    Column(
-        modifier = modifier
-            .padding(
-                top = 16.dp,
-                start = 16.dp,
-                end = 16.dp,
-                bottom = 16.dp,
-            ),
-        
-    ) {
-        Text(
-            text = stringResource(id = R.string.about),
-            style = MaterialTheme.typography.h3,
-        )
-        Text(
-            text = stringResource(id = hobby),
-            style = MaterialTheme.typography.body1,
-        )
-    }
-}
-
-@Composable
-fun DogHobbyIconButton(expanded: Boolean, onClick: () -> Unit) {
-    val iconId = if (expanded) {
-        R.drawable.expand_less
-    } else {
-        R.drawable.expand_more
-    }
-    IconButton(onClick = onClick) {
-        Icon(
-            painter = painterResource(id = iconId),
-            contentDescription = null,
-        )
-    }
-}
-
-@Composable
-fun WoofCard (modifier: Modifier = Modifier, dog: Dog) {
-    var expanded by remember {mutableStateOf(false)}
-//    // this two lines is to add color animation for background.
-//    val color by animateColorAsState(
-//        targetValue = if(expanded) MaterialTheme.colors.background else MaterialTheme.colors.surface
-//    )
-    Card(
-        modifier = modifier
-            .animateContentSize(
-                animationSpec = spring(
-                    dampingRatio = Spring.DampingRatioMediumBouncy,
-                    stiffness = Spring.StiffnessLow,
-                )
-            )
-//            .background(color = color)
-            .padding(8.dp)
-            .fillMaxWidth(),
-        elevation = 4.dp
-    ) {
-        Column() {
-            Row (
-                modifier = Modifier,
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                DogIcon(id = dog.imageResourceId)
-                DogInformation(dog)
-                Spacer(modifier = Modifier.weight(1f))
-                DogHobbyIconButton(expanded = expanded) {
-                    expanded = expanded.not()
-                }
-            }
-            if (expanded) {
-                DogHobby(hobby = dog.hobbies)
-            }
-        }
-    }
-}
-
-
-@Composable
-fun WoofList (modifier: Modifier = Modifier) {
-    Scaffold(
-        topBar = {
-            WoofTobBar()
-        }
-    ) {
-        LazyColumn (
-            modifier = Modifier
-                .background(color = MaterialTheme.colors.background),
-            contentPadding = PaddingValues(8.dp),
-        ){
-            items(dogs) { dog ->
-                WoofCard(dog = dog)
-            }
-        }
-    }
-}
-
-@Composable
-fun WoofTobBar(modifier: Modifier = Modifier) {
-    Row(
-        modifier = modifier
-            .background(color = MaterialTheme.colors.primary)
-            .fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Image(
-            modifier = Modifier
-                .size(64.dp)
-                .padding(8.dp),
-            painter = painterResource(id = R.drawable.ic_woof_logo),
-            contentDescription = null,
-        )
-        Text(
-            modifier = Modifier
-                .padding(start = 8.dp),
-            text = stringResource(id = R.string.app_name),
-            style = MaterialTheme.typography.h1,
-        )
-    }
-}
 
 /** Preview: */
 @Preview(showBackground = true)
 @Composable
-fun WoofCardPreviewDark () {
+fun SuperCardPreviewDark () {
     ComposeCourseTheme (darkTheme = true) {
-        WoofCard(dog = Dog(imageResourceId = R.drawable.koda, name = R.string.dog_name_1, age = 3, hobbies = R.string.dog_description_1))
+        SuperHeroCard(
+            hero = SuperHero(
+                name = "Nick the Night and Day",
+                title = "The Jetpack Hero",
+                imageRes = R.drawable.android_superhero1
+            ),
+        )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun WoofCardPreviewLight () {
+fun SuperCardPreviewLight () {
     ComposeCourseTheme (darkTheme = false) {
-        WoofCard(dog = Dog(imageResourceId = R.drawable.koda, name = R.string.dog_name_1, age = 3, hobbies = R.string.dog_description_1))
+        SuperHeroCard(
+            hero = SuperHero(
+                name = "Nick the Night and Day",
+                title = "The Jetpack Hero",
+                imageRes = R.drawable.android_superhero1
+            ),
+        )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun WoofPreviewDark () {
+fun SuperPreviewDark () {
     ComposeCourseTheme (darkTheme = true) {
-        WoofScreen()
+        SuperHeroesScreen()
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun WoofPreviewLight () {
+fun SuperPreviewLight () {
     ComposeCourseTheme (darkTheme = false) {
-        WoofScreen()
+        SuperHeroesScreen()
     }
 }
