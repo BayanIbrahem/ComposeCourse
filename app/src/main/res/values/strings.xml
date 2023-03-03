@@ -1,3 +1,37 @@
 <resources>
-	<string name="app_name">ComposeCourse</string>
+	<string name="app_name">My Anime Characters List</string>
+
+	<string name="anime_name_0">Levi Ackerman</string>
+	<string name="anime_name_1">Kakashi Hatake</string>
+	<string name="anime_name_2">Itachi Uchiha</string>
+	<string name="anime_name_3">Killua Zoldyck</string>
+	<string name="anime_name_4">Mikasa Ackerman</string>
+	<string name="anime_name_5">Naruto Uzumaki</string>
+	<string name="anime_name_6">Minato Namikaze</string>
+	<string name="anime_name_7">Eren Jaeger</string>
+	<string name="anime_name_8">Madara Uchiha</string>
+	<string name="anime_name_9">Saitama</string>
+
+	<string name="anime_0">Attack on Titan</string>
+	<string name="anime_1">Naruto</string>
+	<string name="anime_2">Naruto</string>
+	<string name="anime_3">Hunter x Hunter</string>
+	<string name="anime_4">Attack on Titan</string>
+	<string name="anime_5">Naruto</string>
+	<string name="anime_6">Naruto</string>
+	<string name="anime_7">Attack on Titan</string>
+	<string name="anime_8">Naruto Shippuden</string>
+	<string name="anime_9">One-Punch Man</string>
+
+	<string name="anime_description_0">Levi, also known as Captain Levi, is a powerful and skilled soldier in the anime series Attack on Titan. He is the captain of the Special Operations Squad within the Survey Corps and is considered one of the most powerful soldiers in the series. He is a force to be reckoned with on the battlefield, but also has a more vulnerable side when it comes to his comrades.</string>
+	<string name="anime_description_1">Kakashi is a complex and iconic character in the anime series Naruto. He is a skilled and powerful ninja known for his mastery of the Sharingan and his laid-back attitude. He is a beloved mentor and teacher to the main protagonist, Naruto, and often saves his bacon during his journey to maturity.</string>
+	<string name="anime_description_2">Itachi is a notorious criminal and influential member of the Uchiha clan in the anime series Naruto. He is a complex and tragic character whose actions profoundly impact the series. He is a skilled and powerful ninja, with a tragic past that shapes his motivations and decisions.</string>
+	<string name="anime_description_3">Killua is a skilled assassin from the anime series Hunter x Hunter. He comes from a family of renowned assassins but struggles with the morals and violence of his upbringing. He has a complex and troubled past but ultimately becomes a loyal friend to the main protagonist, Gon. He has a unique and powerful fighting style, making him a formidable opponent in battle.</string>
+	<string name="anime_description_4">Mikasa Ackerman is a force to be reckoned with in the epic anime series Attack on Titan. As one of the central characters, she exhibits unwavering loyalty to her surrogate sibling, Eren Jaeger. Her formidable combat prowess and physical aptitude have earned her a reputation as a top-tier soldier within the Survey Corps. Her past, fraught with heartache</string>
+	<string name="anime_description_5">Naruto is the main protagonist of the anime series "Naruto". He is a determined and powerful ninja with a burning desire to become the strongest and be acknowledged by his peers. He starts off as an outcast but becomes an influential and respected ninja through hard work and determination. He has a complex and unique fighting style, making him a formidable opponent in battle.</string>
+	<string name="anime_description_6">Minato, also known as the Fourth Hokage, is a powerful and skilled ninja in the anime series Naruto. He is the father of the main protagonist, Naruto, and is known for his exceptional skills and leadership. He is considered one of the most robust and most powerful ninjas in the series and has a unique fighting style. His tragic past and sacrifice for his village and loved ones shape his legacy and impact the story immensely.</string>
+	<string name="anime_description_7">Eren is the main protagonist of the anime series Attack on Titan. He can transform into a Titan and becomes a valuable asset in the fight against the Titans. He is determined to protect his loved ones and avenge his mother death. He is a headstrong character with a burning desire to protect his friends and fellow humans, making him a powerful force on the battlefield.</string>
+	<string name="anime_description_8">Madara Uchiha is a fearsome and accomplished ninja in the beloved anime series Naruto. As a member of the prestigious Uchiha clan, he holds the mantle of clan leader during the war. His immense strength and skill make him one of the most formidable characters in the series, leaving a lasting impact on the story. </string>
+	<string name="anime_description_9">Saitama is the main protagonist of the anime series One Punch Man. He is a powerful and skilled hero known for defeating opponents with a single punch. He is laid-back and apathetic, but his power and ability to save people make him a hero. His unique fighting style and power make him one of animes most iconic and memorable characters</string>
+
 </resources>
